@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess My Flag</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./apps.js"></script>
+    <script src="./data.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to guess my flag</h1>
+    </header>
+
+    <section>
+        <div>
+            <p id="flag"></p>
+        </div>
+
+        <div>
+                <label for="nom">Votre réponse : </label>
+                <input type="text" id="result" name="nom" required>
+                <button id="buttonResult" onclick="getValues()" type="submit">Envoyer</button>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Made with love</p>
+    </footer>
+
+</body>
+</html>
