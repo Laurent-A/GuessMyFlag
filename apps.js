@@ -2,11 +2,13 @@ var lastValue = 0;
 var randomValue = null;
 var flagToFind;
 var inputElement;
+var score = "0";
 
 function showMeTheFlag(){
     var flag = random(myArray);
-    var resultat = document.getElementById("flag");
-    resultat.innerHTML = flag;
+	var imageElement = document.getElementById("imageContainer");
+    var nouvelleSource = "./data_Flag/"+flag+".jpg";
+    imageElement.src = nouvelleSource;
 }
 
 function random(myArray) {
@@ -45,12 +47,23 @@ function checkValueAndReturnKey(customerResult) {
 function isResponseIsaFlag(valueToCheck) {
     if (flagToFind === valueToCheck) {
         console.log("bravo");
+		checkResult = true;
+		scoreToCheck(checkResult);
         inputElement.value = "";
         showMeTheFlag();
     } else {
         console.log("dommage");
         inputElement.value = "";
     }
+}
+
+function scoreToCheck(checkResult) {
+	if (checkResult == true){
+		score++;
+		console.log(score);
+	}
+	 var scoreAfficher = document.getElementById("score");
+	 scoreAfficher.innerHTML = score;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
